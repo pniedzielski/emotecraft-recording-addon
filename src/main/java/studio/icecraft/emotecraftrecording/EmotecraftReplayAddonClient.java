@@ -10,11 +10,7 @@ public class EmotecraftReplayAddonClient {
 	public static void recordPacket(Builder builder) {
 		if (ReplayModRecording.instance == null)
 			return;
-		try {
-			ReplayModRecording.instance.getConnectionEventHandler().getPacketListener().save(
-					NetworkPlatformTools.playPacket(builder.build().write()));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+                ReplayModRecording.instance.getConnectionEventHandler().getPacketListener().save(
+			NetworkPlatformTools.playPacket(builder.build()));
 	}
 }
